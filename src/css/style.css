@@ -1,0 +1,129 @@
+.jss9 .create-account-page-wrapper.create-account-page-wrapper .MuiTypography-h1 {
+    color: #414141;
+    position: relative;
+    font-size: 36px;
+    text-align: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 45px;
+    letter-spacing: 0px;
+    padding-bottom: 18px;
+}
+.breadcrumb-wrapper ol {
+    justify-content: center;
+    margin-bottom: 32px;
+}
+.breadcrumb-wrapper ol li p {
+    color: #f14d54;
+    font-size: 18px;
+    font-weight: 300;
+}
+.MuiBreadcrumbs-ol {
+    margin: 0;
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+}
+.jss9 .create-account-page-wrapper .create-account-row .personal-information {
+    margin-bottom: 32px;
+}
+.jss9 .create-account-page-wrapper .create-account-row .personal-information .MuiTypography-h2 {
+    color: #0d0d0d;
+    position: relative;
+    font-size: 25px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 16px;
+    letter-spacing: 0px;
+    padding-bottom: 15px;
+    text-align:left;
+}
+
+.jss9 .create-account-page-wrapper .create-account-row .personal-information .MuiTypography-h2:after {
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 1px;
+    content: '';
+    position: absolute;
+    background-color: #e5e5e5;
+}
+.jss9 .create-account-page-wrapper .create-account-row p {
+    color: #838383;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 16px;
+}
+.jss9 .create-account-page-wrapper .create-account-row .form-row-wrapper {
+    margin: 0 -15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.jss9 .create-account-page-wrapper .create-account-row .login-information .MuiTypography-h2 {
+    color: #414141;
+    position: relative;
+    font-size: 20px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 16px;
+    letter-spacing: 0px;
+    padding-bottom: 15px;
+    text-align: left;
+}
+.jss9 .create-account-page-wrapper .create-account-row .login-information .MuiTypography-h2:after {
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 1px;
+    content: '';
+    position: absolute;
+    background-color: #e5e5e5;
+}
+.jss9 .create-account-page-wrapper .create-account-row .form-row-wrapper .form-col {
+    flex: 0 0 50%;
+    padding: 0 15px;
+    position: relative;
+    max-width: 50%;
+}
+.jss9 .create-account-page-wrapper .create-account-row .btn-wrapper {
+    margin-top: 17px;
+    margin-bottom: 15px;
+}
+.jss9 .create-account-page-wrapper .create-account-row .btn-wrapper .btn {
+    padding: 0 15px;
+    min-width: 136px;
+}
+.btn.pink-btn {
+    background-color: #f14d54;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 20px;
+    height: 47px;
+    width: 20px;
+    line-height: 47px;
+    padding: 0 29px;
+    text-transform: none;
+}
+.jss9 .create-account-page-wrapper .create-account-row .form-row-wrapper .form-col p.text-danger {
+    color: #f14d54;
+    bottom: 12%;
+    margin: 0;
+    position: relative;
+    font-size: 14px;
+}
+.jss9 .create-account-page-wrapper .create-account-row .form-row-wrapper .MuiInputBase-formControl {
+    margin-bottom: 15px;
+}
+.jss9 .create-account-page-wrapper .create-account-row .form-row-wrapper .MuiInputBase-input.small {
+    border: 1px solid #d5d5d5;
+    height: 20px;
+    width: 500px;
+    line-height: 40px;
+    border-radius: 0;
+}
+  
