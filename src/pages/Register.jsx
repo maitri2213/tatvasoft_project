@@ -10,7 +10,7 @@ function Register(){
         <>
     <Header/>
            
-    <div className="jss9">
+    <div className="createAccountWrapper">
       <div className="create-account-page-wrapper">
         <div className="container">
           <Breadcrumbs
