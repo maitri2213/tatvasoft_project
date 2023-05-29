@@ -1,0 +1,172 @@
+*, :after, :before, div {
+    box-sizing: border-box;
+}
+.jss1 .site-header {
+    box-shadow: none;
+    background-color: #FFFFFF;
+}
+.jss1 .site-header .top-header {
+    padding: 6px 0;
+    text-align: center;
+    background-color: #f14d54;
+    display: block;
+}
+.jss1 .site-header .bottom-header {
+    padding: 18px 0;
+}   
+.container {
+    margin: 0 auto;
+    max-width: 1240px;
+    padding: 0 50px;
+    width: 100%;
+}
+.jss1 .site-header .bottom-header .header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.jss1 .site-header .bottom-header .header-wrapper .logo-wrapper {
+    flex: 0 0 180px;
+    max-width: 180px;
+}
+.jss1 .site-header .bottom-header .header-wrapper .logo-wrapper a {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    transition: all .3s;
+}
+img {
+    -ms-interpolation-mode: bicubic;
+    border: 0;
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper {
+    flex: 1;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper .top-right-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    justify-content: flex-end;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper ul {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper ul.top-nav-bar li {
+    position: relative;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper ul li {
+    width: auto;
+    padding: 0;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper ul.top-nav-bar li a {
+    color: #f14d54;
+    font-size: 14px;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper ul.top-nav-bar li +li {
+    padding-left: 15px;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper ul.top-nav-bar li {
+    position: relative;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper ul li + li {
+    margin-left: 17px;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper ul li {
+    width: auto;
+    padding: 0;
+}
+.MuiListItem-gutters {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper .top-right-bar .cart-country-wrap {
+    margin: 0 0 0 15px;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper ul {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper .top-right-bar .cart-country-wrap li.cart-link {
+    color: #414141;
+    font-size: 15px;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper ul li {
+    width: auto;
+    padding: 0;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper .top-right-bar .cart-country-wrap li.cart-link a {
+    color: #414141;
+    border: 1px solid #cccccc;
+    padding: 8px 13px;
+    border-radius: 4px;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper .top-right-bar .cart-country-wrap li.cart-link span {
+    color: #f14d54;
+    margin: 0 5px;
+    font-weight: 700;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper .top-right-bar .cart-country-wrap li.hamburger {
+    display: none;
+}
+.jss1 .site-header .bottom-header .header-wrapper .nav-wrapper ul li + li {
+    margin-left: 17px;
+}
+.jss1 .site-header .header-search-wrapper {
+    padding: 20px 0;
+    z-index: 2;
+    position: relative;
+    background-color: #f4f4f4;
+}
+.jss1 .site-header .header-search-wrapper .header-search-outer {
+    display: flex;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner {
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    max-width: 700px;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner .text-wrapper {
+    flex: 1;
+    position: relative;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner .btn {
+    flex: 0 0 129px;
+    height: 40px;
+    font-size: 16px;
+    max-width: 129px;
+    line-height: 40px;
+    margin-left: 10px;
+    border-radius: 4px;
+    text-transform: none;
+}
+
+.btn.green-btn {
+    background-color: #80bf32;
+    color: #fff;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner .btn em {
+    top: -2px;
+    position: relative;
+    margin-right: 5px;
+    border-radius: 4px 0 0 4px;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner .text-wrapper .MuiInputBase-input {
+    height: 10px;
+    width: 500px;
+    line-height:40px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+}
