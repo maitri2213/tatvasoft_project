@@ -1,4 +1,4 @@
-.createAccountWrapper .create-account-page-wrapper.create-account-page-wrapper .MuiTypography-h1 {
+.createAccountWrapper .create-account-page-wrapper .MuiTypography-h1 {
     color: #414141;
     position: relative;
     font-size: 36px;
@@ -90,6 +90,28 @@
     position: relative;
     max-width: 50%;
 }
+.createAccountWrapper .create-account-page-wrapper .create-account-row .form-row-wrapper .form-col .MuiInputBase-formControl {
+    margin-bottom: 15px;
+}
+.createAccountWrapper .create-account-page-wrapper .create-account-row .form-row-wrapper .MuiSelect-root {
+    padding-right: 30px !important;
+}
+.createAccountWrapper .create-account-page-wrapper .create-account-row .form-row-wrapper .form-col .MuiFormControl-root {
+    width: 100%;
+    border: 0;
+    margin: 0;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+    min-width: 0;
+    flex-direction: column;
+    vertical-align: top;
+}
+.createAccountWrapper .create-account-page-wrapper .create-account-row .form-row-wrapper .form-col .MuiOutlinedInput-root {
+    position: relative;
+    border-radius: 6px;
+    width: 500px;
+}
 .createAccountWrapper .create-account-page-wrapper .create-account-row .btn-wrapper {
     margin-top: 17px;
     margin-bottom: 15px;
@@ -104,7 +126,7 @@
     color: #fff;
     font-size: 20px;
     height: 47px;
-    width: 20px;
+    width: 200px;
     line-height: 47px;
     padding: 0 29px;
     text-transform: none;
@@ -126,4 +148,109 @@
     line-height: 40px;
     border-radius: 0;
 }
-  
+.loginWrapper .login-page-wrapper .login-row .form-block {
+    flex: 0 0 50%;
+    padding: 0 15px;
+    max-width: 50%;
+}
+.loginWrapper .login-page-wrapper {
+    padding: 42px 0 80px;
+}
+.loginWrapper .login-page-wrapper .login-row {
+    margin: 0 -15px;
+    display: flex;
+    justify-content: space-between;
+}
+.loginWrapper .login-page-wrapper .MuiTypography-h1 {
+    color: #414141;
+    position: relative;
+    font-size: 36px;
+    text-align: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 45px;
+    letter-spacing: 0px;
+    padding-bottom: 18px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .MuiTypography-h2 {
+    color: #0d0d0d;
+    position: relative;
+    font-size: 20px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 16px;
+    letter-spacing: 0px;
+    padding-bottom: 15px;
+    text-align: left;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .MuiTypography-h2:after {
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 1px;
+    content: '';
+    position: absolute;
+    background-color: #e5e5e5;
+}
+.loginWrapper .login-page-wrapper .login-row p {
+    color: #838383;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 16px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper {
+    width: 600px;
+    max-width: 700px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper .form-col {
+    position: relative;
+    margin-top: 20px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .btn-wrapper {
+    margin-top: 25px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .new-customer-wrapper .p1 {
+    margin-top: 25px;
+   
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper .form-col .MuiInputBase-input.small {
+    position: relative;
+    width: 400px;
+    height: 20px;    
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper .btn-wrapper .pink-btn  {
+    width: 150px;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+    text-align: center;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .new-customer-wrapper{
+    margin-top: 25px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .new-customer-wrapper .MuiTypography-h3 {
+    color: #0d0d0d;
+    position: relative;
+    font-size: 20px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 16px;
+    letter-spacing: 0px;
+    padding-bottom: 15px;
+    text-align: left;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .new-customer-wrapper .MuiTypography-h3:after {
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 1px;
+    content: '';
+    position: absolute;
+    background-color: #e5e5e5;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .new-customer-wrapper .btn.pink-btn{
+    margin-top: 25px;
+}

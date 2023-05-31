@@ -1,18 +1,78 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import Logo from "../Image/Logo/tatva.png";
 import cartIcon from "../Image/cart.png";
 import searchIcon from "../Image/search.png";
 import "./Header.css";
-import { Link } from "react-router-dom";
-import { Button, List, ListItem, TextField } from "@mui/material";
-
+import { Link, NavLink } from "react-router-dom";
+import { AppBar, Button, List, ListItem, TextField } from "@mui/material";
+import Shared from "../../utils/shared";
+import { useAuthContext } from "../../context/auth";
+import { RoutePaths } from "../../utils/enum";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import bookService from "../../service/book.service";
+import { useCartContext } from "../../context/cart";
 
 
 function Header(){
+  const authContext = useAuthContext();
+  const cartContext = useCartContext();
+  // const [open, setOpen] = useState(false);
+  //const open = false;
+  const [query, setquery] = useState("");
+  const [bookList, setbookList] = useState([]);
+  const [openSearchResult, setOpenSearchResult] = useState(false);
+
+  const navigate = useNavigate();
+
+  // for mobile menu
+  const openMenu = () => {
+    document.body.classList.toggle("open-menu");
+  };
+
+  const items = useMemo(() => {
+    return Shared.NavigationItems.filter(
+      (item) =>
+        !item.access.length || item.access.includes(authContext.user.roleId)
+    );
+  }, [authContext.user]);
+
+  const logOut = () => {
+    authContext.signOut();
+    cartContext.emptyCart();
+  };
+
+  const searchBook = async () => {
+    const res = await bookService.searchBook(query);
+    setbookList(res);
+  };
+
+  const search = () => {
+    document.body.classList.add("search-results-open");
+    searchBook();
+    setOpenSearchResult(true);
+  };
+
+  const addToCart = (book) => {
+    if (!authContext.user.id) {
+      navigate(RoutePaths.Login);
+      toast.error("Please login before adding books to cart");
+    } else {
+      Shared.addToCart(book, authContext.user.id).then((res) => {
+        if (res.error) {
+          toast.error(res.error);
+        } else {
+          toast.success("Item added in cart");
+          cartContext.updateCart();
+        }
+      });
+    }
+  };
+
     return(
 
        <div class="jss1">
-       <header class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary site-header MuiPaper-elevation4" id="header">
+       <AppBar className="site-header" id="header" position="static">
        <div class="top-header">
        </div>
        <div class="bottom-header">
@@ -26,35 +86,56 @@ function Header(){
        <div class="nav-wrapper">
        <div class="top-right-bar">
        <List className="top-nav-bar">
+       {!authContext.user.id && (
                       <>
                         <ListItem>
-                          <Link to="/Login" title="Login">
+                          <NavLink to={RoutePaths.Login} title="Login">
                             Login
-                          </Link>
+                          </NavLink>
                         </ListItem>
                         <ListItem>
-                          <Link to="/Register" title="Register">
+                          <Link to={RoutePaths.Register} title="Register">
                             Register
                           </Link>
                         </ListItem>
                       </>
+                    )}
+                    {items.map((item, index) => (
+                      <ListItem key={index}>
+                        <Link to={item.route} title={item.name}>
+                          {item.name}
+                        </Link>
+                      </ListItem>
+                    ))}
                   </List>
                   <List className="cart-country-wrap">
                     <ListItem className="cart-link">
                       <Link to="/cart" title="Cart">
                         <img src={cartIcon} alt="cart.png" />
-                        <span>0</span>
+                        <span>{cartContext.cartData.length}</span>
                         Cart
                       </Link>
                     </ListItem>
-    
+                    <ListItem className="hamburger" onClick={openMenu}>
+                      <span></span>
+                    </ListItem>
                   </List>
+                  {authContext.user.id && (
+                    <List className="right">
+                      <Button onClick={() => logOut()} variant="outlined">
+                        Log out
+                      </Button>
+                    </List>
+                  )}
        </div>
        </div>
        </div>
        </div>
        </div>
-       <div className="search-overlay"></div>
+       <div className="search-overlay"onClick={() => {
+            setOpenSearchResult(false);
+            document.body.classList.remove("search-results-open");
+          }}></div>
           <div className="header-search-wrapper">
             <div className="container">
               <div className="header-search-outer">
@@ -64,14 +145,52 @@ function Header(){
                       id="text"
                       name="text"
                       placeholder="What are you looking for..."
-                      variant="outlined"/>
-                      
+                      variant="outlined"
+                      value={query}
+                     onChange={(e) => setquery(e.target.value)}
+                      />
+                      {openSearchResult && (
+                    <>
+                      <div className="product-listing">
+                        {bookList?.length === 0 && (
+                          <p className="no-product">No product found</p>
+                        )}
+
+                        {/* <p className="loading">Loading....</p> */}
+                        <List className="related-product-list">
+                          {bookList?.length > 0 &&
+                            bookList.map((item, i) => {
+                              return (
+                                <ListItem key={i}>
+                                  <div className="inner-block">
+                                    <div className="left-col">
+                                      <span className="title">{item.name}</span>
+                                      <p>{item.description}</p>
+                                    </div>
+                                    <div className="right-col">
+                                      <span className="price">
+                                        {item.price}
+                                      </span>
+                                      <Link onClick={() => addToCart(item)}>
+                                        Add to cart
+                                      </Link>
+                                    </div>
+                                  </div>
+                                </ListItem>
+                              );
+                            })}
+                        </List>
+                      </div>
+                    </>
+                  )}
+                </div>
                      <Button
                      type="submit"
                      className="green-btn btn"
                      variant="contained"
                      color="primary"
-                     disableElevation>
+                     disableElevation
+                     onClick={search}>
                     <em>
                       <img src={searchIcon} alt="search" />
                     </em>
@@ -81,8 +200,8 @@ function Header(){
               </div>
             </div>
           </div>
-        </div>
-       </header>
+       
+      </AppBar>
        </div>
 
 

@@ -1,0 +1,79 @@
+.cartWrapper {
+    margin: 0 auto;
+    padding: 42px 0 80px;
+    max-width: 700px;
+}
+.cartWrapper .MuiTypography-h4 {
+    color: #414141;
+    position: relative;
+    font-size: 36px;
+    text-align: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 45px;
+    letter-spacing: 0px;
+    padding-bottom: 18px;
+}
+.cartWrapper .MuiTypography-h4:after {
+    left: 50%;
+    width: 165px;
+    bottom: 0;
+    height: 2px;
+    content: '';
+    position: absolute;
+    transform: translateX(-50%);
+    background-color: #f14d54;
+}
+.cartWrapper .cart-heading-block {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.cartWrapper .cart-heading-block h5 {
+    font-size: 18px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.cartWrapper .cart-heading-block .MuiTypography-h5 {
+    color: #414141;
+    position: relative;
+    font-size: 20px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 16px;
+    letter-spacing: 0px;
+    padding-bottom: 15px;
+}
+.cartWrapper .cart-list-wrapper {
+    margin: 0 0 35px;
+}
+
+.cartWrapper .cart-list-wrapper .btn-wrapper3 .MuiButton-label {
+    width: 100%;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+}
+.cartWrapper .cart-list-wrapper .btn-wrapper3 .MuiTouchRipple-root {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+    position: absolute;
+    border-radius: inherit;
+    pointer-events: none;
+}
+*, :after, :before, div {
+    box-sizing: border-box;
+}
+.Toastify__toast-body {
+    flex: 1 1 auto;
+    margin: auto 0;
+    padding: 6px;
+}

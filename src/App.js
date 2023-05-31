@@ -1,23 +1,32 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
-import ProductList from './pages/ProductList';
 import Register from './pages/Register';
 import Login from './pages/Login';
-import EditProduct from './pages/EditProduct';
 import Cart from './pages/Cart';
+import { AuthWrapper, useAuthContext } from './context/auth';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import BookList from './pages/BookList';
+import UpdateProfile from './pages/UpdateProfile';
 
 function App() {
+  const authContext = useAuthContext();
+  const Redirect = <Navigate to={"/login"} />
   return (
     <>
       <BrowserRouter>
-      <Routes>
-        <Route path='/login' Component={Login}/>
-        <Route path='/register' Component={Register}/>
-        <Route path='/product-list' Component={ProductList}/>
-        <Route path='/edit-product' Component={EditProduct}/>
-        <Route path='/cart' Component={Cart}/>
-        <Route path='/' Component={Login}/>
-      </Routes>
+        <AuthWrapper>
+          <ToastContainer className="toast"
+            autoClose="1000" />
+          <Routes>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/register' element={!authContext.user.id ? <Register/> : Redirect} />
+            <Route path='/booklist' element={ !authContext.user.id ?<BookList/> :Redirect }/>
+            <Route path='/update-profile' element={<UpdateProfile />}/>
+            <Route path='/cart' element={<Cart />}/>
+            
+          </Routes>
+        </AuthWrapper>
       </BrowserRouter>
     </>
   );

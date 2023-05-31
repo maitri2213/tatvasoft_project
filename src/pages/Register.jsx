@@ -1,11 +1,65 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/style.css"
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import { Breadcrumbs, Button, FormControl, InputLabel, Select, TextField, Typography } from "@mui/material";
+import { Breadcrumbs, Button, FormControl, InputLabel,  MenuItem,  Select,  TextField, Typography } from "@mui/material";
 import { Formik } from "formik";
+import { toast } from "react-toastify";
+import ValidationErrorMessage from "../components/ValidationErrorMessage";
+import authService from "../service/auth.service";
+import userService from "../service/user.service";
+
+import * as Yup from "yup";
 function Register(){
+  const navigate = useNavigate();
+  const initialValues = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    roleId: 0,
+    password: "",
+    confirmPassword: "",
+  };
+  const [roleList, setRoleList] = useState([]);
+
+  useEffect(() => {
+    if (roleList.length) return;
+    getRoles();
+  }, [roleList]);
+
+  const getRoles = () => {
+    userService.getAllRoles().then((res) => {
+      setRoleList(res);
+    });
+  };
+
+  const validationSchema = Yup.object().shape({
+    email: Yup.string()
+      .email("Invalid email address format")
+      .required("Email is required"),
+    password: Yup.string()
+      .min(5, "Password must be 5 characters at minimum")
+      .required("Password is required"),
+    confirmPassword: Yup.string()
+      .oneOf(
+        [Yup.ref("password"), null],
+        "Password and Confirm Password must be match."
+      )
+      .required("Confirm Password is required."),
+    firstName: Yup.string().required("First name is required"),
+    lastName: Yup.string().required("Last name is required"),
+    roleId: Yup.number().required("Role is required"),
+  });
+
+  const onSubmit = (data) => {
+    delete data.confirmPassword;
+    console.log("from data", data)
+    authService.create(data).then((res) => {
+      navigate("/login");
+      toast.success("Successfully registered");
+    });
+  };
  return(
         <>
     <Header/>
@@ -27,7 +81,10 @@ function Register(){
           <Typography variant="h1">Login or Create an Account</Typography>
           <div className="create-account-row">
             <Formik
-                          >
+               initialValues={initialValues}
+              validationSchema={validationSchema}
+              onSubmit={onSubmit}
+               >
               {({
                 values,
                 errors,
@@ -55,7 +112,11 @@ function Register(){
                             onBlur={handleBlur}
                             onChange={handleChange}
                           />
-                                                  </div>
+                          <ValidationErrorMessage
+                            message={errors.firstName}
+                            touched={touched.firstName}
+                          />
+                       </div>
                         <div className="form-col">
                           <TextField
                             onBlur={handleBlur}
@@ -66,7 +127,10 @@ function Register(){
                             variant="outlined"
                             inputProps={{ className: "small" }}
                           />
-                         
+                         <ValidationErrorMessage
+                            message={errors.lastName}
+                            touched={touched.lastName}
+                          />
                         </div>
                         <div className="form-col">
                           <TextField
@@ -78,15 +142,35 @@ function Register(){
                             variant="outlined"
                             inputProps={{ className: "small" }}
                           />
-                          
+                          <ValidationErrorMessage
+                            message={errors.email}
+                            touched={touched.email}
+                          />
                         </div>
                         <div className="form-col">
-                          <FormControl
+                        <FormControl
                             className="dropdown-wrapper"
                             variant="outlined"
                           >
                             <InputLabel htmlFor="select">Roles</InputLabel>
-                          
+                        <Select
+                              name="roleId"
+                              id={"roleId"}
+                              inputProps={{ className: "small" }}
+                              onChange={handleChange}
+                              
+                              value={values.roleId}
+                            >
+                              {roleList.length > 0 &&
+                                roleList.map((role) => (
+                                  <MenuItem                                 
+                                    value={role.id}
+                                    key={"name" + role.id}
+                                  >
+                                    {role.name}
+                                  </MenuItem>
+                                ))}
+                            </Select>
                           </FormControl>
                         </div>
                       </div>
@@ -106,7 +190,10 @@ function Register(){
                             variant="outlined"
                             inputProps={{ className: "small" }}
                           />
-                          
+                           <ValidationErrorMessage
+                            message={errors.password}
+                            touched={touched.password}
+                          />
                         </div>
                         <div className="form-col">
                           <TextField
@@ -119,7 +206,10 @@ function Register(){
                             variant="outlined"
                             inputProps={{ className: "small" }}
                           />
-                          
+                          <ValidationErrorMessage
+                            message={errors.confirmPassword}
+                            touched={touched.confirmPassword}
+                          />
                         </div>
                       </div>
                       <div className="btn-wrapper">
