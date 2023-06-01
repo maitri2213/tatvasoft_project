@@ -196,7 +196,7 @@ const UpdateProfile = () => {
                     color="primary"
                     disableElevation
                     onClick={() => {
-                      navigate("/");
+                      navigate("/booklist");
                     }}
                   >
                     Cancel

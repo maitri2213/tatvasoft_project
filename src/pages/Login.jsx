@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import "../css/style.css"
+import "../css/login_style.css"
 import { Breadcrumbs, Button,  TextField, Typography } from "@mui/material";
 import { Formik } from "formik";
 import { toast } from "react-toastify";

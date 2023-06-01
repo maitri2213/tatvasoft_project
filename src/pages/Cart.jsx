@@ -99,7 +99,7 @@ function Cart(){
             const res = await orderService.placeOrder(newOrder);
             if (res) {
               cartContext.updateCart();
-              navigate("/");
+              navigate("/booklist");
               toast.success(Shared.messages.ORDER_SUCCESS);
             }
           } catch (error) {

@@ -170,3 +170,54 @@ img {
     border-radius: 6px;
     background-color: #FFFFFF;
 }
+.jss1 .site-header .header-search-wrapper .header-search-inner .text-wrapper .product-listing {
+    left: 0;
+    right: 0;
+    padding: 15px;
+    z-index: 9;
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 4px;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner .text-wrapper .product-listing .related-product-list li {
+    cursor: pointer;
+    padding: 10px 5px;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner .text-wrapper .product-listing .related-product-list li .inner-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner .text-wrapper .product-listing .related-product-list li .inner-block .left-col {
+    flex: 0 0 80%;
+    max-width: 80%;
+    padding-right: 10px;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner .text-wrapper .product-listing .related-product-list li .inner-block .title {
+    color: #414141;
+    font-size: 16px;
+    font-weight: 500;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner .text-wrapper .product-listing .related-product-list li .inner-block p {
+    color: #838383;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner .text-wrapper .product-listing .related-product-list li .inner-block .right-col {
+    flex: 0 0 20%;
+    display: flex;
+    max-width: 20%;
+    
+    flex-direction: column;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner .text-wrapper .product-listing .related-product-list li .inner-block .price {
+    color: #414141;
+    display: block;
+    font-size: 14px;
+    text-align: right;
+}
+.jss1 .site-header .header-search-wrapper .header-search-inner .text-wrapper .product-listing .related-product-list li .inner-block a {
+    color: #f14d54;
+}
