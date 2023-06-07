@@ -1,0 +1,180 @@
+.loginWrapper .login-page-wrapper {
+    padding: 42px 0 80px;
+}
+.loginWrapper .login-page-wrapper .MuiTypography-h1 {
+    color: #414141;
+    position: relative;
+    font-size: 36px;
+    text-align: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 45px;
+    letter-spacing: 0px;
+    padding-bottom: 18px;
+}
+.loginWrapper .login-page-wrapper .MuiTypography-h1:after {
+    left: 50%;
+    width: 165px;
+    bottom: 0;
+    height: 2px;
+    content: '';
+    position: absolute;
+    transform: translateX(-50%);
+    background-color: #f14d54;
+}
+.loginWrapper .login-page-wrapper .login-row {
+    margin: 0 -15px;
+    display: flex;
+    justify-content: space-between;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block {
+    flex: 0 0 50%;
+    padding: 0 15px;
+    max-width: 50%;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .MuiTypography-h2 {
+    color: #0d0d0d;
+    position: relative;
+    font-size: 20px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 16px;
+    letter-spacing: 0px;
+    padding-bottom: 15px;
+    text-align: left;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .MuiTypography-h2:after {
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 1px;
+    content: '';
+    position: absolute;
+    background-color: #e5e5e5;
+}
+.loginWrapper .login-page-wrapper .login-row p {
+    color: #838383;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 16px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper {
+    width: 100%;
+    max-width: 390px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper .form-col {
+    position: relative;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper .form-col .MuiFormControl-fullWidth {
+    width: 100%;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper .form-col .MuiFormControl-root {
+    width: 500px;
+    border: 0;
+    margin: 0;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+    min-width: 0;
+    flex-direction: column;
+    vertical-align: top;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper .form-col .MuiInputBase-formControl {
+    margin-bottom: 35px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper .form-col .MuiInputBase-input.small {
+    border: 1px solid #d5d5d5;
+    height: 20px;
+    line-height: 40px;
+    border-radius: 0;
+    
+
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper .form-col .MuiInputBase-root {
+    color: #212121;
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    font-size: 14px;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: normal;
+    line-height: 1.1876em;
+    letter-spacing: 0.00938em;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper .form-col .MuiOutlinedInput-root {
+    position: relative;
+    border-radius: 6px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper .form-col .MuiInputBase-fullWidth {
+    width: 100%;
+}
+.loginWrapper .login-page-wrapper .login-row p.text-danger {
+    top: 70%;
+    color: #f14d54;
+    margin: 0;
+    position: absolute;
+    font-size: 14px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .btn-wrapper {
+    margin-top: 25px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .btn-wrapper .btn {
+    padding: 0 15px;
+    min-width: 110px;
+}
+.btn.pink-btn {
+    background-color: #f14d54;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 20px;
+    height: 47px;
+    line-height: 47px;
+    padding: 0 29px;
+    text-transform: none;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .new-customer-wrapper .p1 {
+    margin-top: 25px;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .form-row-wrapper .btn-wrapper .pink-btn  {
+    width: 150px;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+    text-align: center;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .new-customer-wrapper{
+    margin-top: 35px;
+}
+
+.loginWrapper .login-page-wrapper .login-row .form-block .new-customer-wrapper .MuiTypography-h3 {
+    color: #0d0d0d;
+    position: relative;
+    font-size: 20px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 16px;
+    letter-spacing: 0px;
+    padding-bottom: 15px;
+    text-align: left;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .new-customer-wrapper .MuiTypography-h3:after {
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 1px;
+    content: '';
+    position: absolute;
+    background-color: #e5e5e5;
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .new-customer-wrapper .p1 {
+    margin-top: 25px;
+   
+}
+.loginWrapper .login-page-wrapper .login-row .form-block .new-customer-wrapper .btn.pink-btn{
+    margin-top: 25px;
+}

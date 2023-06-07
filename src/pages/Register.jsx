@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../css/login_style.css"
+import "../css/Register.css"
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { Breadcrumbs, Button, FormControl, InputLabel,  MenuItem,  Select,  TextField, Typography } from "@mui/material";

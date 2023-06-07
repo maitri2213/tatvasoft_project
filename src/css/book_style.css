@@ -1,3 +1,4 @@
+/* this file for book, category and user style file.*/
 .productWrapper {
     padding: 42px 0 80px;
 }
@@ -37,16 +38,15 @@
 }
 .productWrapper .btn-wrapper .MuiFormControl-fullWidth {
     max-width: 300px;
+
 }
-.productWrapper .btn-wrapper .MuiOutlinedInput-root {
-    position: relative;
-    border-radius: 6px;
-}
+
 .productWrapper .btn-wrapper .MuiInputBase-input.small {
-    border: 1px solid #d5d5d5;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 0;
+    border: 1px solid gray;
+
+    line-height: 20px;
+    border-radius: 4PX;
+   
 }
 .productWrapper .btn-wrapper .btn {
     height: 40px;
@@ -54,33 +54,34 @@
     font-size: 14px;
     min-width: 100px;
     line-height: 40px;
-    margin-left: 10px;
+    width: 40px;
+    margin-top: 50px;
 }
-.MuiTableContainer-root {
+.productWrapper .MuiTableContainer-root {
     width: 100%;
     overflow-x: auto;
 }
-.MuiTable-root {
+.productWrapper .MuiTable-root {
     width: 100%;
     display: table;
     border-spacing: 0;
     border-collapse: collapse;
 }
-.MuiTableHead-root {
+.productWrapper .MuiTableHead-root {
     display: table-header-group;
 }
-.MuiTableRow-root {
+.productWrapper .MuiTableRow-root {
     color: inherit;
     display: table-row;
     outline: 0;
     vertical-align: middle;
 }
-.MuiTableCell-head {
+.productWrapper .MuiTableCell-head {
     color: #212121;
     font-weight: 500;
     line-height: 1.5rem;
 }
-.MuiTableBody-root {
+.productWrapper .MuiTableBody-root {
     display: table-row-group;
 }
 .productWrapper .MuiTablePagination-root {
@@ -89,19 +90,19 @@
 .productWrapper .MuiTablePagination-root .MuiTablePagination-toolbar {
     padding-right: 20px;
 }
-.MuiTablePagination-spacer {
+.productWrapper .MuiTablePagination-spacer {
     flex: 1 1 100%;
 }
-.MuiTablePagination-caption {
+.productWrapper .MuiTablePagination-caption {
     flex-shrink: 0;
 }
-.MuiTablePagination-input {
+.productWrapper .MuiTablePagination-input {
     color: inherit;
     font-size: inherit;
     flex-shrink: 0;
 }
 
-.MuiTablePagination-selectRoot {
+.productWrapper .MuiTablePagination-selectRoot {
     margin-left: 8px;
     margin-right: 32px;
 }
@@ -114,18 +115,18 @@
 .productWrapper .MuiTablePagination-root .MuiTablePagination-toolbar .MuiSelect-nativeInput {
     top: 0;
 }
-.MuiSelect-icon {
+.productWrapper .MuiSelect-icon {
     top: calc(50% - 12px);
     color: rgba(0, 0, 0, 0.54);
     right: 0;
     position: absolute;
     pointer-events: none;
 }
-.MuiTablePagination-actions {
+.productWrapper .MuiTablePagination-actions {
     flex-shrink: 0;
     margin-left: 20px;
 }
-.MuiIconButton-root.Mui-disabled {
+.productWrapper .MuiIconButton-root.Mui-disabled {
     color: rgba(0, 0, 0, 0.26);
     background-color: transparent;
 }
@@ -152,4 +153,31 @@
     margin-left: 10px;
     border-radius: 4px;
     background-color: transparent;
+}
+.productWrapper .btn-wrapper .MuiFormControl-fullWidth {
+    max-width: 300px;
+    margin-left: 40px;
+
+}
+.productWrapper .btn-wrapper .MuiFormControl-fullWidth {
+    width: 100%;
+}
+
+.productWrapper .btn-wrapper .MuiInputBase-fullWidth {
+    width: 100%;
+    
+}
+.productWrapper .btn-wrapper .MuiInputBase-root {
+    color: #212121;
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    font-size: 14px;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: normal;
+   
+    letter-spacing: 0.00938em;
+    height: 0;
 }

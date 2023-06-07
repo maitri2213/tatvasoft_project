@@ -101,7 +101,7 @@ const Book = () => {
             variant="contained"
             color="primary"
             disableElevation
-            onClick={() => navigate("/add-book")}
+            onClick={() => navigate("/add_book")}
           >
             Add
           </Button>
@@ -137,7 +137,7 @@ const Book = () => {
                       color="primary"
                       disableElevation
                       onClick={() => {
-                        navigate(`/edit-book/${row.id}`);
+                        navigate(`/edit_book/${row.id}`);
                       }}
                     >
                       Edit

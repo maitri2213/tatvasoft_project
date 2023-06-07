@@ -47,7 +47,7 @@ function Header(){
     setbookList(res);
   };
 
-  const search = () => {
+  const search = (defaultFilter) => {
     document.body.classList.add("search-results-open");
     searchBook();
     setOpenSearchResult(true);
@@ -55,7 +55,7 @@ function Header(){
 
   const addToCart = (book) => {
     if (!authContext.user.id) {
-      navigate(RoutePaths.Login);
+      navigate('/login');
       toast.error("Please login before adding books to cart");
     } else {
       Shared.addToCart(book, authContext.user.id).then((res) => {
@@ -132,7 +132,7 @@ function Header(){
        </div>
        </div>
        </div>
-       <div className="search-overlay"onClick={() => {
+       <div className="search-overlay"onChange={() => {
             setOpenSearchResult(false);
             document.body.classList.remove("search-results-open");
           }}></div>

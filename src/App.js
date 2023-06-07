@@ -27,14 +27,16 @@ function App() {
             <Route path='/login' element={<Login/>}/>
             <Route path='/register' element={!authContext.user.id ? <Register/> : Redirect} />
             <Route path='/booklist' element={ !authContext.user.id ?<BookList/> :Redirect }/>
-            <Route path='/update-profile' element={<UpdateProfile />}/>
-            <Route path='/book' element={<Book/>}/>
-            <Route path='/edit_book' element={<EditBook/>}/>
-            <Route path='/category' element={<Category/>}/>
-            <Route path='/edit_category' element={<EditCategory/>}/>
-            <Route path='/cart' element={<Cart />}/>
-            <Route path='/user' element={<User/>}/>
-            <Route path='/edit_user' element={<EditUser/>}/>
+            <Route path='/update-profile' element={!authContext.user.id ?<UpdateProfile /> : Redirect}/>
+            <Route path='/book' element={!authContext.user.id ?<Book/> : Redirect} />
+            <Route path='/edit_book/:id' element={!authContext.user.id ?<EditBook/>: Redirect}/>
+            <Route path='/category' element={!authContext.user.id ?<Category/>: Redirect}/>
+            <Route path='/edit_category/:id' element={!authContext.user.id ?<EditCategory/>: Redirect}/>
+            <Route path='/cart' element={!authContext.user.id ?<Cart /> : Redirect}/>
+            <Route path='/user' element={!authContext.user.id ?<User/>: Redirect}/>
+            <Route path='/edit_user/:id' element={!authContext.user.id ?<EditUser/>: Redirect}/>
+            <Route path='/add_book' element={!authContext.user.id ?<EditBook/>: Redirect}/>
+            <Route path='/add_category' element={!authContext.user.id ?<EditCategory/>: Redirect}/>
           </Routes>
         </AuthWrapper>
       </BrowserRouter>

@@ -81,7 +81,7 @@ const Category = () => {
             variant="contained"
             color="primary"
             disableElevation
-            onClick={() => navigate("/add-category")}
+            onClick={() => navigate("/add_category")}
           >
             Add
           </Button>
@@ -113,7 +113,7 @@ const Category = () => {
                       color="primary"
                       disableElevation
                       onClick={() => {
-                        navigate(`/edit-category/${row.id}`);
+                        navigate(`/edit_category/${row.id}`);
                       }}
                     >
                       Edit

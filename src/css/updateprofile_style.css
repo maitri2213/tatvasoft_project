@@ -13,7 +13,7 @@
     letter-spacing: 0px;
     padding-bottom: 18px;
 }
-.MuiTypography-h1:after {
+.editWrapper .MuiTypography-h1:after {
     left: 50%;
     width: 165px;
     bottom: 0;
@@ -31,25 +31,65 @@
 .editWrapper .form-row-wrapper .form-col .MuiFormControl-fullWidth {
     width: 100%;
 }
+.editWrapper .form-row-wrapper .form-col .MuiFormControl-root {
+    width: 100%;
+    border: 0;
+    margin: 0;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+    min-width: 0;
+    flex-direction: column;
+    vertical-align: top;
+}
+.editWrapper .form-row-wrapper .form-col .MuiInputLabel-outlined {
+    z-index: 1;
+    transform: translate(14px, 20px) scale(1);
+    pointer-events: none;
+}
 .editWrapper .form-row-wrapper .MuiInputBase-formControl {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     width: 500px;
-    height: 80px;
+    height: 40px;
 }
 .editWrapper .form-row-wrapper .form-col .MuiInputBase-input.small {
     border: 1px solid #d5d5d5;
-    height: 25px;
-    line-height: 80px;
+    height: 30px;
+    line-height: 50px;
     border-radius: 0;
+}
+.editWrapper .form-row-wrapper  .MuiInputBase-input {
+    font: inherit;
+    color: #414141;
+    width: 100%;
+    border: 1px solid #cacaca;
+    height: 80px;
+    margin: 10 30px;
+    display: block;
+    padding: 0 15px !important;
+    font-size: 16px;
+    min-width: 0;
+    background: none;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    font-family: 'Roboto', sans-serif;
+    line-height: 80px;
+    border-radius: 4px;
+    animation-name: mui-auto-fill-cancel;
+    letter-spacing: inherit;
+    animation-duration: 10ms;
+    -webkit-tap-highlight-color: transparent;
 }
 .editWrapper .form-row-wrapper .form-col .MuiTextField-root .MuiOutlinedInput-notchedOutline {
     border: none;
 }
+
 .editWrapper .form-row-wrapper .form-col {
     flex: 0 0 50%;
     padding: 0 15px;
     position: relative;
     max-width: 50%;
+    
 }
 .editWrapper .btn-wrapper .btn {
     height: 40px;
@@ -59,6 +99,7 @@
     border-radius: 4px;
     text-transform: none;
     width: 50px;
+    margin-left: 30px;
 }
 .editWrapper .btn-wrappe .btn.green-btn {
     background-color: #80bf32;

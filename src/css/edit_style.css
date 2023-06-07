@@ -1,12 +1,7 @@
 .editWrapper {
     padding: 42px 0 80px;
 }
-.container {
-    margin: 0 auto;
-    max-width: 1240px;
-    padding: 0 50px;
-    width: 100%;
-}
+
 .editWrapper .MuiTypography-h1 {
     color: #414141;
     position: relative;
@@ -29,66 +24,7 @@
     transform: translateX(-50%);
     background-color: #f14d54;
 }
-.editWrapper .form-row-wrapper {
-    margin: 0 -15px;
-    display: flex;
-    flex-wrap: wrap;
-}
-.editWrapper .form-row-wrapper .form-col {
-    flex: 0 0 50%;
-    padding: 0 15px;
-    position: relative;
-    max-width: 50%;
-}
-.MuiFormControl-fullWidth {
-    width: 100%;
-}
-.editWrapper .form-row-wrapper .MuiInputBase-formControl {
-    margin-bottom: 35px;
-}
-.MuiTextField-root .MuiOutlinedInput-notchedOutline {
-    border: none;
-}
-.MuiInputBase-input.small {
-    border: 1px solid #d5d5d5;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 0;
-}
-.editWrapper .form-row-wrapper .form-col .uploaded-file-name {
-    padding-top: 28px;
-    margin-bottom: 35px;
-}
-.editWrapper .form-row-wrapper .form-col .uploaded-file-name em {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    margin-right: 10px;
-}
-img {
-    -ms-interpolation-mode: bicubic;
-    border: 0;
-    display: inline-block;
-    height: auto;
-    max-width: 100%;
-    vertical-align: middle;
-}
-.editWrapper .form-row-wrapper .form-col .uploaded-file-name span {
-    color: #000;
-    cursor: pointer;
-    margin: -10px -10px -10px 0;
-    display: inline-block;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: 700;
-}
-.editWrapper .form-row-wrapper .MuiOutlinedInput-multiline .MuiOutlinedInput-inputMultiline {
-    border: 1px solid #d5d5d5;
-    height: 80px !important;
-    padding: 5px 15px !important;
-    line-height: 1.2;
-    border-radius: 0;
-}
+
 .editWrapper .btn-wrapper .btn {
     height: 40px;
     font-size: 16px;
@@ -98,7 +34,7 @@ img {
     text-transform: none;
     width: 50px;
 }
-.editWrapper .btn-wrappe .btn.green-btn {
+.editWrapper .btn-wrapper .btn.green-btn {
     background-color: #80bf32;
     color: #fff;
     width: 50;
@@ -114,13 +50,14 @@ img {
     border-radius: 4px;
     text-transform: none;
 }
-.editWrapper .btn-wrappe .btn.pink-btn {
+.editWrapper .btn-wrapper .btn.pink-btn {
     background-color: #f14d54;
-    border-radius: 2px;
+    border-radius: 4px;
     color: #fff;
     font-size: 20px;
-    height: 47px;
+    height: 40px;
     line-height: 47px;
     padding: 0 29px;
     text-transform: none;
 }
+

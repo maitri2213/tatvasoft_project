@@ -72,8 +72,117 @@
 *, :after, :before, div {
     box-sizing: border-box;
 }
-.Toastify__toast-body {
-    flex: 1 1 auto;
-    margin: auto 0;
-    padding: 6px;
+.cartWrapper .cart-list-wrapper {
+    margin: 0 0 35px;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item {
+    border: 1px solid rgba(0,0,0,0.2);
+    display: flex;
+    padding: 15px;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-img {
+    flex: 0 0 150px;
+    max-width: 150px;
+    min-height: 100px;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-img a {
+    cursor: pointer;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-img a img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content {
+    flex: 1;
+    padding-left: 20px;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-top-content {
+    margin: 0 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-top-content .cart-item-left {
+    margin-right: 10px;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .brand {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-top-content .cart-item-left a {
+    color: #f14d54;
+    cursor: pointer;
+    text-decoration: none;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-top-content .price-block span.current-price {
+    text-align: right;
+    font-weight: 700;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-bottom-content {
+    display: flex;
+    justify-content: space-between;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-bottom-content .qty-group {
+    display: flex;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-bottom-content .btn {
+    height: 20px;
+    padding: 0;
+    min-width: 20px;
+    line-height: 20px;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-bottom-content .number-count {
+    border: 1px solid #ccc;
+    height: 20px;
+    margin: 0 10px;
+    display: inline-block;
+    min-width: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-bottom-content a {
+    color: #f14d54;
+    cursor: pointer;
+    text-decoration: none;
+}
+.cartWrapper .btn-wrapper3 .btn.pink-btn:hover {
+    background-color: #ff101b;
+}
+
+.cartWrapper .btn-wrapper3 .btn.pink-btn {
+    background-color: #f14d54;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 20px;
+    height: 47px;
+    line-height: 47px;
+    padding: 0 29px;
+    text-transform: none;
+    width: 200px;
+}
+.cartWrapper .btn-wrapper3 .MuiButton-label {
+    width: 100%;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+}
+.cartWrapper .btn-wrapper3 .MuiTouchRipple-root {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+    position: absolute;
+    border-radius: inherit;
+    pointer-events: none;
 }

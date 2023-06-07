@@ -39,6 +39,7 @@
     margin-bottom: 16px;
     letter-spacing: 0px;
     padding-bottom: 15px;
+    text-align: left;
 }
 .productListWrapper .title-wrapper .dropdown-wrapper .MuiFormControl-root {
     flex: 0 0 270px;
@@ -50,10 +51,12 @@
     justify-content: flex-end;
 }
 .productListWrapper .dropdown-wrapper .MuiInputBase-input.small {
-    border: 1px solid #d5d5d5;
-    height: 40px;
+    border: 1px solid gray;
+    height: 20px;
     line-height: 40px;
-    border-radius: 0;
+    border-radius: 5px;
+    width: 200px;
+    margin-top:30px;
 }
 .productListWrapper .product-list-wrapper {
     margin-top: 30px;
@@ -162,29 +165,19 @@
     border-radius: inherit;
     pointer-events: none;
 }
-.productListWrapper  .pagination-wrapper {
+.productListWrapper .pagination-wrapper {
     margin-top: 40px;
     
 }
-.pagination-wrapper .MuiPagination-ul {
+.productListWrapper .pagination-wrapper .MuiPagination-ul {
     justify-content: center;
 }
-.pagination-wrapper .MuiPagination-ul .MuiPaginationItem-page.Mui-selected {
+.productListWrapper  .pagination-wrapper .MuiPagination-ul .MuiPaginationItem-page.Mui-selected {
     background-color: #f14d54;
     color: #fff;
 }
-.MuiTouchRipple-root {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    overflow: hidden;
-    position: absolute;
-    border-radius: inherit;
-    pointer-events: none;
-}
-.MuiPaginationItem-page {
+
+.productListWrapper  .MuiPaginationItem-page {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .productListWrapper .title-wrapper .MuiFormControl-root {
@@ -195,47 +188,9 @@
     margin-left: auto;
     flex-direction: inherit;
     justify-content: flex-end;
+    width: 200px;
 }
-.productListWrapper .title-wrapper .MuiFormControl-root .MuiInputLabel-formControl {
-    margin: 0px 10px 0px 0px;
-}
-.MuiOutlinedInput-root {
-    position: relative;
-    border-radius: 6px;
-}
-.productListWrapper .title-wrapper .MuiFormControl-root .MuiSelect-selectMenu {
-    height: 40px;
-    min-width: 200px;
-    line-height: 40px;
-    width: 40px;
-}
-.productListWrapper .productListWrapper .title-wrapper .MuiFormControl-root .MuiSelect-root:after {
-    top: 50%;
-    right: 14px;
-    width: 15px;
-    height: 15px;
-    content: '';
-    position: absolute;
-    transform: translateY(-50%);
-    background-size: 10px;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjM2QkI1RkUwNjkyQTExRUM4MDk2QUY5NDA1MEIyNkVCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjM2QkI1RkUxNjkyQTExRUM4MDk2QUY5NDA1MEIyNkVCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MzZCQjVGREU2OTJBMTFFQzgwOTZBRjk0MDUwQjI2RUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzZCQjVGREY2OTJBMTFFQzgwOTZBRjk0MDUwQjI2RUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz62leGDAAAAZUlEQVR42mJ0dHRcw8DAUAzEDxkwgR0QT2ACEluAeC8QK6IpcALiFUCcyQIkFgDxb6hCVyC+C6XnA7EvEJ9lgepaCsR/gHgPEHcCcTVUwXmQJAuS8SuB+C8Q9wKxDxBfhEkABBgAC7QTy5neKxoAAAAASUVORK5CYII=);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.productListWrapper .productListWrapper .title-wrapper .MuiFormControl-root .MuiOutlinedInput-root {
-    position: relative;
-    border-radius: 6px;
-}
-.productListWrapper .productListWrapper .title-wrapper .MuiFormControl-root .MuiInputBase-root {
-    color: #212121;
-    cursor: text;
-    display: inline-flex;
-    position: relative;
-    font-size: 14px;
-    box-sizing: border-box;
-    align-items: center;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: normal;
-    line-height: 1.1876em;
-    letter-spacing: 0.00938em;
-}
+
+
+
+

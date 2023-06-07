@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../css/edit_style.css"
+import "../css/edituser.css"
 import * as Yup from "yup";
 
 import {
@@ -18,6 +18,8 @@ import ValidationErrorMessage from "../components/ValidationErrorMessage/index";
 import { toast } from "react-toastify";
 import { useAuthContext } from "../context/auth";
 import Shared from "../utils/shared";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
 const EditUser = () => {
   const authContext = useAuthContext();
@@ -101,6 +103,8 @@ const EditUser = () => {
       .catch((e) => toast.error(Shared.messages.UPDATED_FAIL));
   };
   return (
+    <>
+    <Header/>
     <div className="editUserWrapper">
       <div className="container">
         <Typography variant="h1">Edit User</Typography>
@@ -225,6 +229,8 @@ const EditUser = () => {
         </Formik>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
