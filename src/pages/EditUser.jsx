@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../css/edituser.css"
 import * as Yup from "yup";
-
 import {
   Typography,
   TextField,
@@ -16,13 +15,14 @@ import userService from "../service/user.service";
 import { Formik } from "formik";
 import ValidationErrorMessage from "../components/ValidationErrorMessage/index";
 import { toast } from "react-toastify";
-import { useAuthContext } from "../context/auth";
+
 import Shared from "../utils/shared";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import { useSelector } from "react-redux";
 
 const EditUser = () => {
-  const authContext = useAuthContext();
+  const authData = useSelector((state) => state.auth.user);
   const [roles, setRoles] = useState([]);
   const [user, setUser] = useState();
   
@@ -173,19 +173,19 @@ const EditUser = () => {
                     touched={touched.email}
                   />
                 </div>
-                {values.id !== authContext.user.id && (
+                {values.id !== authData.user.id && (
                   <div className="form-col">
                     <FormControl
                       className="dropdown-wrapper"
                       variant="outlined"
-                      disabled={values.id === authContext.user.id}
+                      disabled={values.id === authData.user.id}
                     >
                       <InputLabel htmlFor="select">Roles</InputLabel>
                       <Select
                         name="roleId"
                         id={"roleId"}
                         onChange={handleChange}
-                        disabled={values.id === authContext.user.id}
+                        disabled={values.id === authData.user.id}
                         className="customSelect"
                         
                         value={values.roleId}

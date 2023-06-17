@@ -13,15 +13,16 @@ import TableRow from "@mui/material/TableRow";
 import { Button } from "@mui/material";
 import userService from "../service/user.service";
 import { toast } from "react-toastify";
-import { useAuthContext } from "../context/auth";
 import ConfirmationDialog from "../components/ConfirmationDialog";
 import Shared from "../utils/shared";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import { useSelector } from "react-redux";
+
 
 const User = () => {
   
-  const authContext = useAuthContext();
+  const authData = useSelector((state) => state.auth.user);
   const [filters, setFilters] = useState(defaultFilter);
   const [userList, setUserList] = useState({
     pageIndex: 0,
@@ -132,7 +133,7 @@ const User = () => {
                     >
                       Edit
                     </Button>
-                    {row.id !== authContext.user.id && (
+                    {row.id !== authData.user.id && (
                       <Button
                         type="button"
                         className="btn pink-btn"

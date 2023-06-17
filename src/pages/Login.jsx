@@ -8,11 +8,11 @@ import { Formik } from "formik";
 import { toast } from "react-toastify";
 import ValidationErrorMessage from "../components/ValidationErrorMessage";
 import authService from "../service/auth.service";
-import { useAuthContext } from "../context/auth";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 function Login(){
   const navigate = useNavigate();
-  const authContext = useAuthContext();
+  const dispatch = useDispatch();
   const initialValues = {
     email: "",
     password: "",
@@ -32,7 +32,7 @@ function Login(){
     authService.login(values).then((res) => {
       delete res._id;
       delete res.__v;
-      authContext.setUser(res);
+      dispatch.setUser(res);
       navigate("/booklist");
       toast.success("Successfully logged in");
     });

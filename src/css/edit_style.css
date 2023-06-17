@@ -1,7 +1,6 @@
 .editWrapper {
     padding: 42px 0 80px;
 }
-
 .editWrapper .MuiTypography-h1 {
     color: #414141;
     position: relative;
@@ -24,7 +23,197 @@
     transform: translateX(-50%);
     background-color: #f14d54;
 }
+.editWrapper .form-row-wrapper {
+    margin: 0 -15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.editWrapper .form-row-wrapper .form-col {
+    flex: 0 0 50%;
+    padding: 0 15px;
+    position: relative;
+    max-width: 50%;
+}
+.editWrapper .form-row-wrapper .form-col .MuiFormControl-fullWidth {
+    width: 100%;
+}
+.editWrapper .form-row-wrapper .form-col .MuiInputLabel-outlined {
+    z-index: 1;
+    transform: translate(14px, 20px) scale(1);
+    pointer-events: none;
+}
+.editWrapper .form-row-wrapper .form-col .MuiInputBase-fullWidth {
+    width: 100%;
+}
+.editWrapper .form-row-wrapper .form-col .MuiInputBase-root {
+    color: #212121;
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    font-size: 14px;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: normal;
+    line-height: 1.1876em;
+    letter-spacing: 0.00938em;
+    margin-top: 60px;
+}
 
+.editWrapper .form-row-wrapper .form-col .MuiInputBase-input.small {
+    border: 1px solid #d5d5d5;
+    height: 20px;
+    line-height: 40px;
+    border-radius: 0;
+}
+.editWrapper .dropdown-wrapper .MuiInputBase-input {
+    height: 20px;
+    line-height: 40px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+}
+.editWrapper .form-row-wrapper .form-col .file-upload-btn {
+    display: block;
+    position: relative;
+    padding-top: 25px;
+    margin-bottom: 40px;
+}
+.editWrapper .form-row-wrapper .form-col .file-upload-btn .MuiInput-root {
+    width: 100%;
+    position: relative;
+}
+.editWrapper .form-row-wrapper .form-col .file-upload-btn .MuiInputBase-root {
+    color: #212121;
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    font-size: 14px;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: normal;
+    line-height: 1.1876em;
+    letter-spacing: 0.00938em;
+}
+.editWrapper .form-row-wrapper .form-col .file-upload-btn .MuiInput-underline:before {
+    opacity: 0;
+}
+.editWrapper .form-row-wrapper .form-col .file-upload-btn .MuiInput-underline:before {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "\00a0";
+    position: absolute;
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+    pointer-events: none;
+    margin-bottom: 60px;
+}
+.editWrapper .form-row-wrapper .form-col .file-upload-btn .MuiInputBase-input {
+    font: inherit;
+    color: #414141;
+    width: 100%;
+    border: 1px solid #cacaca;
+    height: 60px;
+    display: block;
+    padding: 0 25px !important;
+    font-size: 16px;
+    min-width: 0;
+    background: none;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    font-family: 'Roboto', sans-serif;
+    line-height: 60px;
+    border-radius: 4px;
+    animation-name: mui-auto-fill-cancel;
+    letter-spacing: inherit;
+    animation-duration: 10ms;
+    -webkit-tap-highlight-color: transparent;
+}
+.editWrapper .form-row-wrapper .form-col .file-upload-btn .MuiInput-underline:after {
+    opacity: 0;
+}
+.editWrapper .form-row-wrapper .form-col .file-upload-btn .MuiInput-underline:after {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    border-bottom: 2px solid #00548e;
+    pointer-events: none;
+}
+.editWrapper .form-row-wrapper .form-col .file-upload-btn .btn {
+    left: 0;
+    height: 40px;
+    padding: 0 10px;
+    position: absolute;
+    font-size: 16px;
+    min-width: 120px;
+    line-height: 40px;
+    border-radius: 0px;
+    text-transform: none;
+
+}
+.editWrapper .form-row-wrapper .form-col .file-upload-btn .btn.pink-btn {
+    background-color: #f14d54;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 20px;
+    height: 40px;
+    line-height: 47px;
+    padding: 0 29px;
+    text-transform: none;
+    width: 50px;
+}
+.editWrapper .form-row-wrapper .form-col .uploaded-file-name {
+    padding-top: 28px;
+    margin-bottom: 35px;
+}
+.editWrapper .form-row-wrapper .form-col .uploaded-file-name em {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 10px;
+}
+img {
+    -ms-interpolation-mode: bicubic;
+    border: 0;
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.editWrapper .form-row-wrapper .form-col .uploaded-file-name span {
+    color: #000;
+    cursor: pointer;
+    margin: -10px -10px -10px 0;
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.editWrapper .form-row-wrapper .form-col.full-width {
+    flex: 0 0 100%;
+    max-width: 100%; 
+}
+.editWrapper .form-row-wrapper .form-col.full-width .MuiFormControl-fullWidth {
+    width: 100%;
+}
+.editWrapper .form-row-wrapper .form-col.full-width .MuiInputLabel-outlined {
+    z-index: 1;
+    transform: translate(14px, 20px) scale(1);
+    pointer-events: none;
+}
+.editWrapper .form-row-wrapper .form-col.full-width .MuiOutlinedInput-multiline .MuiOutlinedInput-inputMultiline {
+    border: 1px solid #d5d5d5;
+    height: 80px !important;
+    padding: 5px 15px !important;
+    line-height: 80px;
+    border-radius: 0;
+    width: 1140px;
+}
 .editWrapper .btn-wrapper .btn {
     height: 40px;
     font-size: 16px;
@@ -33,11 +222,13 @@
     border-radius: 4px;
     text-transform: none;
     width: 50px;
+    margin-top: 30px;
+    margin-right: 30px;
 }
 .editWrapper .btn-wrapper .btn.green-btn {
     background-color: #80bf32;
     color: #fff;
-    width: 50;
+    width: 50px;
 }
 .editWrapper .btn-wrapper .btn+.btn {
     margin-left: 10px;
@@ -49,6 +240,7 @@
     line-height: 40px;
     border-radius: 4px;
     text-transform: none;
+    width: 50px;
 }
 .editWrapper .btn-wrapper .btn.pink-btn {
     background-color: #f14d54;
@@ -60,4 +252,14 @@
     padding: 0 29px;
     text-transform: none;
 }
-
+.editWrapper .form-row-wrapper  .MuiFormControl-root {
+    width: 100%;
+    border: 0;
+    margin: 0;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+    min-width: 0;
+    flex-direction: column;
+    vertical-align: top;
+}

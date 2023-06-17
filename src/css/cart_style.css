@@ -137,9 +137,11 @@
 .cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-bottom-content .btn {
     height: 20px;
     padding: 0;
-    min-width: 20px;
+    min-width: 10px;
     line-height: 20px;
+    width: 20px;
 }
+
 .cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-bottom-content .number-count {
     border: 1px solid #ccc;
     height: 20px;
@@ -153,6 +155,23 @@
     color: #f14d54;
     cursor: pointer;
     text-decoration: none;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-bottom-content .btn .MuiButton-label {
+    width: 100%;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+}
+.cartWrapper .cart-list-wrapper .cart-list-item .cart-item-content .cart-item-bottom-content .btn .MuiTouchRipple-root {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+    position: absolute;
+    border-radius: inherit;
+    pointer-events: none;
 }
 .cartWrapper .btn-wrapper3 .btn.pink-btn:hover {
     background-color: #ff101b;

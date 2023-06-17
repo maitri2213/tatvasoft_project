@@ -7,13 +7,17 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import orderService from "../service/order.service";
 import Shared from "../utils/shared";
-import { useCartContext } from "../context/cart";
+//import { useCartContext } from "../context/cart";
 import cartService from "../service/cart.service";
-import { useAuthContext } from "../context/auth";
+//import { useAuthContext } from "../context/auth";
+import { removeFromCart, fetchCartData } from "../state/slice/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+
 function Cart(){
-    const authContext = useAuthContext();
-    const cartContext = useCartContext();
-    const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const cartData = useSelector((state) => state.cart.cartData);
+  const authData = useSelector((state) => state.auth.user);  
+  const navigate = useNavigate();
   
     const [CartList, setCartList] = useState([]);
     const [ItemsInCart, setItemsInCart] = useState(0);
@@ -30,16 +34,16 @@ function Cart(){
     };
   
     useEffect(() => {
-      setCartList(cartContext.cartData);
-      setItemsInCart(cartContext.cartData.length);
-      getTotalPrice(cartContext.cartData);
-    }, [cartContext.cartData]);
+      setCartList(cartData);
+      setItemsInCart(cartData.length);
+      getTotalPrice(cartData);
+    }, [cartData]);
   
     const removeItem = async (id) => {
       try {
         const res = await cartService.removeItem(id);
         if (res) {
-          cartContext.updateCart();
+          dispatch(removeFromCart(id));
         }
       } catch (error) {
         toast.error("Somthing went wrong!");
@@ -84,8 +88,8 @@ function Cart(){
     };
   
     const PlaceOrder = async () => {
-      if (authContext.user.id) {
-        const userCart = await cartService.getList(authContext.user.id);
+      if (authData.id) {
+        const userCart = await cartService.getList(authData.id);
         if (userCart.length) {
           try {
             let cartIds = [];
@@ -93,12 +97,12 @@ function Cart(){
               cartIds.push(element.id);
             });
             const newOrder = {
-              userId: authContext.user.id,
+              userId: authData.id,
               cartIds,
             };
             const res = await orderService.placeOrder(newOrder);
             if (res) {
-              cartContext.updateCart();
+              dispatch(fetchCartData(authData.id));
               navigate("/booklist");
               toast.success(Shared.messages.ORDER_SUCCESS);
             }
@@ -154,7 +158,7 @@ function Cart(){
                       </Button>
                       <span className="number-count">{cartItem.quantity}</span>
                       <Button
-                        className="btn-pink-btn"
+                        className="btn pink-btn"
                         onClick={(e) => updateQuantity(cartItem, false, e)}
                       >
                         -

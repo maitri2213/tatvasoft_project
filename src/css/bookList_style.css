@@ -50,13 +50,20 @@
     flex-direction: inherit;
     justify-content: flex-end;
 }
-.productListWrapper .dropdown-wrapper .MuiInputBase-input.small {
-    border: 1px solid gray;
-    height: 20px;
-    line-height: 40px;
-    border-radius: 5px;
-    width: 200px;
-    margin-top:30px;
+.productListWrapper .dropdown-wrapper .MuiInputBase-root {
+    
+    color: #212121;
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    font-size: 14px;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: normal;
+    margin-bottom: 30px;
+    letter-spacing: 0.00938em;
+    height: 40px;
 }
 .productListWrapper .product-list-wrapper {
     margin-top: 30px;
@@ -190,7 +197,11 @@
     justify-content: flex-end;
     width: 200px;
 }
-
+.productListWrapper .title-wrapper .MuiFormControl-root .MuiInputLabel-outlined {
+    z-index: 1;
+    transform: translate(14px, 20px) scale(1);
+    pointer-events: none;
+}
 
 
 

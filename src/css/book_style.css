@@ -41,13 +41,6 @@
 
 }
 
-.productWrapper .btn-wrapper .MuiInputBase-input.small {
-    border: 1px solid gray;
-
-    line-height: 20px;
-    border-radius: 4PX;
-   
-}
 .productWrapper .btn-wrapper .btn {
     height: 40px;
     padding: 0 10px;
@@ -55,7 +48,8 @@
     min-width: 100px;
     line-height: 40px;
     width: 40px;
-    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 20px;
 }
 .productWrapper .MuiTableContainer-root {
     width: 100%;
@@ -177,7 +171,8 @@
     align-items: center;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: normal;
-   
+    margin-bottom: 30px;
     letter-spacing: 0.00938em;
-    height: 0;
+    height: 40px;
+    
 }

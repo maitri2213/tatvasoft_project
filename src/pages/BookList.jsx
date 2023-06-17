@@ -12,17 +12,19 @@ import {
   TextField,
   Grid,
 } from "@mui/material";
-import { useAuthContext } from "../context/auth";
+//import { useAuthContext } from "../context/auth";
 import { toast } from "react-toastify";
 import Shared from "../utils/shared";
-import { useCartContext } from "../context/cart";
+//import { useCartContext } from "../context/cart";
 import { defaultFilter } from "../constant/constant";
 import bookService from "../service/book.service";
 import categoryService from "../service/category.service";
+import { fetchCartData } from "../state/slice/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const BookList = () => {
-  const authContext = useAuthContext();
-  const cartContext = useCartContext();
+  const authData = useSelector((state) => state.auth.user);
+    const dispatch = useDispatch();
   const [bookResponse, setBookResponse] = useState({
     pageIndex: 0,
     pageSize: 10,
@@ -74,12 +76,12 @@ const BookList = () => {
   }, [categories, bookResponse]);
 
   const addToCart = (book) => {
-    Shared.addToCart(book, authContext.user.id).then((res) => {
+    Shared.addToCart(book, authData.user.id).then((res) => {
       if (res.error) {
         toast.error(res.message);
       } else {
         toast.success(res.message);
-        cartContext.updateCart();
+        dispatch(fetchCartData(authData.id));
       }
     });
   };

@@ -6,19 +6,21 @@ import "./Header.css";
 import { Link, NavLink } from "react-router-dom";
 import { AppBar, Button, List, ListItem, TextField } from "@mui/material";
 import Shared from "../../utils/shared";
-import { useAuthContext } from "../../context/auth";
+
 import { RoutePaths } from "../../utils/enum";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import bookService from "../../service/book.service";
-import { useCartContext } from "../../context/cart";
+
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCartData } from "../../state/slice/cartSlice";
+import { signOut } from "../../state/slice/authSlice";
 
 
 function Header(){
-  const authContext = useAuthContext();
-  const cartContext = useCartContext();
-  // const [open, setOpen] = useState(false);
-  //const open = false;
+  const dispatch = useDispatch();
+  const cartData = useSelector((state) => state.cart.cartData);
+  const authData = useSelector((state) => state.auth.user);
   const [query, setquery] = useState("");
   const [bookList, setbookList] = useState([]);
   const [openSearchResult, setOpenSearchResult] = useState(false);
@@ -33,13 +35,14 @@ function Header(){
   const items = useMemo(() => {
     return Shared.NavigationItems.filter(
       (item) =>
-        !item.access.length || item.access.includes(authContext.user.roleId)
+        !item.access.length || item.access.includes(authData.user.roleId)
     );
-  }, [authContext.user]);
+  }, [authData.user]);
 
   const logOut = () => {
-    authContext.signOut();
-    cartContext.emptyCart();
+    //authContext.signOut();
+    //cartContext.emptyCart();
+    dispatch(signOut());
   };
 
   const searchBook = async () => {
@@ -54,16 +57,16 @@ function Header(){
   };
 
   const addToCart = (book) => {
-    if (!authContext.user.id) {
+    if (!authData.user.id) {
       navigate('/login');
       toast.error("Please login before adding books to cart");
     } else {
-      Shared.addToCart(book, authContext.user.id).then((res) => {
+      Shared.addToCart(book, authData.user.id).then((res) => {
         if (res.error) {
           toast.error(res.error);
         } else {
           toast.success("Item added in cart");
-          cartContext.updateCart();
+          dispatch(fetchCartData(authData.id));
         }
       });
     }
@@ -86,7 +89,7 @@ function Header(){
        <div class="nav-wrapper">
        <div class="top-right-bar">
        <List className="top-nav-bar">
-       {!authContext.user.id && (
+       {!authData.user.id && (
                       <>
                         <ListItem>
                           <NavLink to={RoutePaths.Login} title="Login">
@@ -112,7 +115,7 @@ function Header(){
                     <ListItem className="cart-link">
                       <Link to="/cart" title="Cart">
                         <img src={cartIcon} alt="cart.png" />
-                        <span>{cartContext.cartData.length}</span>
+                        <span>{cartData.cartData.length}</span>
                         Cart
                       </Link>
                     </ListItem>
@@ -120,7 +123,7 @@ function Header(){
                       <span></span>
                     </ListItem>
                   </List>
-                  {authContext.user.id && (
+                  {authData.user.id && (
                     <List className="right">
                       <Button onClick={() => logOut()} variant="outlined">
                         Log out

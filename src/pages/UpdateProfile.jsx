@@ -1,9 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Typography, TextField, Button } from "@mui/material";
-import {
-  AuthContext,
-  useAuthContext,
-} from "../context/auth";
+
 import "../css/updateprofile_style.css"
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -14,29 +11,23 @@ import Shared from "../utils/shared";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import { useDispatch, useSelector } from "react-redux";
 
 const UpdateProfile = () => {
-  const authContext = useAuthContext();
+  
   
   const navigate = useNavigate();
-  const { user } = useContext(AuthContext);
+  const dispatch = useDispatch();
+  const { authData } = useSelector((state) => state.auth.user);
 
   const initialValueState = {
-    email: user.email,
-    firstName: user.firstName,
-    lastName: user.lastName,
+    email: authData.email,
+    firstName: authData.firstName,
+    lastName: authData.lastName,
     newPassword: "",
     confirmPassword: ""
   }
 
-  // const [initialValueState, setinitialValueState] = useState({
-  //     email: user.email,
-  //     firstName: user.firstName,
-  //     lastName: user.lastName,
-  //     newPassword: "",
-  //     confirmPassword: ""
-  //   }
-  // );
   const [updatePassword, setUpdatePassword] = useState(false);
 
   const validationSchema = Yup.object().shape({
@@ -54,13 +45,13 @@ const UpdateProfile = () => {
   });
 
   const onSubmit = async (values) => {
-    const password = values.newPassword ? values.newPassword : user.password;
+    const password = values.newPassword ? values.newPassword : authData.password;
     delete values.confirmPassword;
     delete values.newPassword;
-    const data = Object.assign(user, { ...values, password });
+    const data = Object.assign(authData, { ...values, password });
     const res = await userService.updateProfile(data);
     if (res) {
-      authContext.setUser(res);
+      dispatch.setUser(res);
       toast.success(Shared.messages.UPDATED_SUCCESS);
       navigate("/");
     }
@@ -69,7 +60,7 @@ const UpdateProfile = () => {
   return (
     <>
     <Header/>
-    <div className="editWrapper">
+    <div className="updateprofileWrapper">
       <div className="container">
         <Typography variant="h1">Update Profile</Typography>
         <Formik
